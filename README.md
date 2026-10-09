@@ -4,6 +4,10 @@ Live **SwiftUI previews on Windows**. Edit the views of an iOS app on a Windows 
 
 It is an independent, open reimplementation of a subset of the SwiftUI API, written in Swift and rendered with Win32/GDI. Your view code is compiled unmodified (`import SwiftUI`) with the official Swift toolchain for Windows.
 
+![Settings list and detail page previewed on Windows](docs/screenshot.png)
+
+*The demo in [`Examples/Demo`](Examples/Demo/ContentView.swift), rendered on Windows (with the optional SF Pro font).*
+
 > Not affiliated with Apple. "SwiftUI", "iPhone" and "SF Pro" are trademarks of Apple Inc. This project contains no Apple code or assets.
 
 ## What works
@@ -37,6 +41,8 @@ python preview.py <path-to-your-ios-project>
 
 `preview.py` watches the project's `.swift` files, copies them (except the `@main` App file) into the `PreviewHost` target, rewrites `#Preview` blocks into functions, builds, and relaunches the preview window. Build errors are printed in the console and the previous preview stays open.
 
+Try it with the bundled demo: `python preview.py Examples/Demo`
+
 Projects inside WSL work too, e.g. `python preview.py //wsl.localhost/Ubuntu-24.04/root/apps/MyApp`.
 
 The script expects the toolchain at `%LOCALAPPDATA%\Programs\Swift` (the installer default). Adjust `SWIFT_HOME` and the version folders at the top of `preview.py` if yours differs.
@@ -59,6 +65,7 @@ By default text is drawn with Segoe UI. For an accurate iOS look, download **SF 
 Sources/SwiftUI/      the SwiftUI reimplementation (Views, layout nodes, Win32 runtime)
 Sources/PreviewHost/  preview executable; preview.py fills it with your views
 Sources/CounterApp/   small standalone demo app
+Examples/Demo/        iOS-style demo (List, NavigationStack, TextField, Toggle)
 preview.py            live preview watcher
 ```
 

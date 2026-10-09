@@ -4,3 +4,4 @@ fonts/
 *.log
 *.ps1
 __pycache__/
+!docs/*.png
