@@ -1,0 +1,6 @@
+.build/
+fonts/
+*.png
+*.log
+*.ps1
+__pycache__/
